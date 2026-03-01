@@ -1,9 +1,43 @@
 'use client';
+import { useEffect, useRef } from 'react';
+import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import Image from 'next/image';
+
+gsap.registerPlugin(ScrollTrigger);
 
 export default function LocationMap() {
+  const sectionRef = useRef<HTMLDivElement>(null);
+  const flowerRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const ctx = gsap.context(() => {
+      if (flowerRef.current) {
+        gsap.fromTo(flowerRef.current,
+          { scale: 0.8, opacity: 0 },
+          {
+            scale: 1,
+            opacity: 0.1,
+            duration: 1.5,
+            ease: 'power2.out',
+            scrollTrigger: {
+              trigger: sectionRef.current,
+              start: 'top 70%',
+            }
+          }
+        );
+      }
+    }, sectionRef);
+
+    return () => ctx.revert();
+  }, []);
+
   return (
-    <section className="py-24 md:py-32 bg-[var(--color-soft-butter)] relative">
-      <div className="max-w-6xl mx-auto px-6">
+    <section ref={sectionRef} className="relative py-24 md:py-32 bg-[var(--color-soft-butter)]">
+      <div ref={flowerRef} className="absolute left-0 top-1/2 -translate-y-1/2 w-[100vw] h-[100vw] max-h-[800px] max-w-[800px] lg:max-h-[900px] lg:max-w-[900px] xl:max-h-[1000px] xl:max-w-[1000px] opacity-10 z-0 pointer-events-none">
+        <Image src="/element/flower-white-pink.png" alt="" fill sizes="100vw" className="object-contain" />
+      </div>
+      <div className="max-w-6xl mx-auto px-6 relative z-10">
         <h2 className="text-4xl md:text-5xl text-center mb-4 font-serif">The Location</h2>
         <p className="text-center text-gray-500 mb-12 tracking-widest uppercase text-sm">
           Park Avenue, Koh Pich City Hall, Phnom Penh, Cambodia

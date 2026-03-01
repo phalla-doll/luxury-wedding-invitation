@@ -2,11 +2,13 @@
 import { useEffect, useRef } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import Image from 'next/image';
 
 gsap.registerPlugin(ScrollTrigger);
 
 export default function EventDetails() {
   const sectionRef = useRef<HTMLDivElement>(null);
+  const flowerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const ctx = gsap.context(() => {
@@ -20,13 +22,32 @@ export default function EventDetails() {
           }
         }
       );
+
+      if (flowerRef.current) {
+        gsap.fromTo(flowerRef.current,
+          { scale: 0.8, opacity: 0 },
+          {
+            scale: 1,
+            opacity: 0.1,
+            duration: 1.5,
+            ease: 'power2.out',
+            scrollTrigger: {
+              trigger: sectionRef.current,
+              start: 'top 70%',
+            }
+          }
+        );
+      }
     }, sectionRef);
 
     return () => ctx.revert();
   }, []);
 
   return (
-    <section ref={sectionRef} className="py-24 md:py-48 bg-[var(--color-soft-butter)] text-[var(--color-ink)]">
+    <section ref={sectionRef} className="relative py-24 md:py-48 bg-[var(--color-soft-butter)] text-[var(--color-ink)]">
+      <div ref={flowerRef} className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[100vw] h-[100vw] max-h-[800px] max-w-[800px] lg:max-h-[900px] lg:max-w-[900px] xl:max-h-[1000px] xl:max-w-[1000px] opacity-10 z-0 pointer-events-none">
+        <Image src="/element/flower-pink.png" alt="" fill sizes="100vw" className="object-contain" />
+      </div>
       <div className="max-w-7xl mx-auto px-6 md:px-12">
         <h2 className="text-4xl md:text-8xl font-serif mb-16 md:mb-32 tracking-tight">The Details</h2>
         
