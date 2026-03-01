@@ -50,7 +50,7 @@ export default function EventDetails() {
         <Image src="/element/flower-pink.png" alt="" fill sizes="100vw" className="object-contain" />
       </div>
       <div className="max-w-7xl mx-auto px-6 md:px-12">
-        <h2 className="text-4xl md:text-8xl font-serif mb-16 md:mb-32 tracking-tight">The Details</h2>
+        <h2 className="text-4xl md:text-6xl font-serif mb-16 md:mb-32 tracking-tight">The Details</h2>
         
         <div className="flex flex-col border-t border-black/20">
           {/* Row 1: Date & Time */}
