@@ -84,14 +84,14 @@ export default function Hero() {
           priority
           referrerPolicy="no-referrer"
         />
-        <div className="absolute inset-0 bg-black/30" />
+        <div className="absolute inset-0 bg-gradient-to-b from-black/20 via-black/40 to-black/70" />
       </div>
 
-      <div className="hero-text-container relative z-10 text-center text-white flex flex-col items-center">
-        <h1 ref={titleRef} className="text-6xl md:text-8xl lg:text-9xl font-serif mb-4 tracking-tight">
+      <div className="hero-text-container relative z-10 text-center text-white flex flex-col items-center px-6">
+        <h1 ref={titleRef} className="text-6xl md:text-8xl lg:text-9xl font-serif mb-4 tracking-tight drop-shadow-2xl">
           John & Emma
         </h1>
-        <p ref={dateRef} className="text-xl md:text-2xl font-sans tracking-widest uppercase">
+        <p ref={dateRef} className="text-xl md:text-2xl font-sans tracking-widest uppercase drop-shadow-md text-white/90">
           Are Getting Married <br/> June 21, 2026
         </p>
       </div>
