@@ -79,7 +79,7 @@ function Hero() {
         <Image
           ref={imageRef}
           src="/pexels-panditwiguna-2788494.jpg"
-          alt="John and Emma"
+          alt="Kakda and Savry"
           fill
           sizes="100vw"
           className="object-cover scale-110"
@@ -91,7 +91,7 @@ function Hero() {
 
       <div className="hero-text-container relative z-10 text-center text-white flex flex-col items-center px-6">
         <h1 ref={titleRef} className="text-6xl md:text-8xl lg:text-9xl font-serif mb-4 tracking-tight drop-shadow-2xl">
-          John & Emma
+          Kakda & Savry
         </h1>
         <p ref={dateRef} className="text-xl md:text-2xl font-sans tracking-widest uppercase drop-shadow-md text-white/90">
           Are Getting Married <br/> June 21, 2026

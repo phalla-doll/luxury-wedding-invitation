@@ -7,10 +7,14 @@ import EventDetails from '@/components/EventDetails';
 import PhotoGallery from '@/components/PhotoGallery';
 import LocationMap from '@/components/LocationMap';
 import Closing from '@/components/Closing';
+import FloatingParticles from '@/components/FloatingParticles';
+import AudioPlayer from '@/components/AudioPlayer';
 
 export default function Home() {
   return (
     <SmoothScroll>
+      <FloatingParticles />
+      <AudioPlayer />
       <a href="#main-content" className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-50 focus:bg-white focus:p-4 focus:rounded focus:shadow-lg">
         Skip to main content
       </a>

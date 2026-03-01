@@ -1,5 +1,5 @@
 # 🔍 Comprehensive Website Audit Report
-## Luxury Wedding Invitation - John & Emma
+## Luxury Wedding Invitation - Kakda & Savry
 
 **Date:** March 1, 2026  
 **Auditor:** opencode CLI  
@@ -72,7 +72,7 @@ The website demonstrates excellent design and solid performance fundamentals, bu
 <Image
   ref={imageRef}
   src="/pexels-panditwiguna-2788494.jpg"
-  alt="John and Emma"
+  alt="Kakda and Savry"
   fill
   className="object-cover scale-110"
   priority
@@ -87,7 +87,7 @@ The website demonstrates excellent design and solid performance fundamentals, bu
 <Image
   ref={imageRef}
   src="/pexels-panditwiguna-2788494.jpg"
-  alt="John and Emma"
+  alt="Kakda and Savry"
   fill
   sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
   className="object-cover scale-110"

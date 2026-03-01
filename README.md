@@ -1,6 +1,6 @@
 # Luxury Wedding Invitation
 
-A beautiful, animated wedding invitation website with elegant design and smooth scroll animations. Built for John & Emma's wedding on June 21, 2026.
+A beautiful, animated wedding invitation website with elegant design and smooth scroll animations. Built for Kakda & Savry's wedding on June 21, 2026.
 
 ![Wedding Invitation](https://github.com/phalla-doll/luxury-wedding-invitation/blob/main/public/SCR-20260301-nezf.jpeg)
 
@@ -166,4 +166,4 @@ This project is private and proprietary.
 
 ---
 
-Made with ❤️ for John & Emma's wedding
+Made with ❤️ for Kakda & Savry's wedding

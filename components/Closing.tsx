@@ -39,7 +39,7 @@ export default function Closing() {
       </p>
       
       <div ref={sigRef} className="text-5xl md:text-8xl text-[var(--color-golden-bronze)] font-[family-name:var(--font-cursive)]">
-        John & Emma
+        Kakda & Savry
       </div>
 
       <p className="mt-16 text-sm tracking-widest uppercase text-gray-500">
