@@ -4,7 +4,7 @@ import OurStory from '@/components/OurStory';
 import Proposal from '@/components/Proposal';
 import EventDetails from '@/components/EventDetails';
 import PhotoGallery from '@/components/PhotoGallery';
-import RSVP from '@/components/RSVP';
+import LocationMap from '@/components/LocationMap';
 import Closing from '@/components/Closing';
 
 export default function Home() {
@@ -16,7 +16,7 @@ export default function Home() {
         <Proposal />
         <EventDetails />
         <PhotoGallery />
-        <RSVP />
+        <LocationMap />
         <Closing />
       </main>
     </SmoothScroll>
