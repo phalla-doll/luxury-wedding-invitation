@@ -6,6 +6,15 @@ import Image from 'next/image';
 
 gsap.registerPlugin(ScrollTrigger);
 
+const agendaItems = [
+  { time: '4:00 AM', event: 'Preparation', desc: 'Bride and Groom getting ready' },
+  { time: '1:00 PM', event: 'First Look', desc: 'A private moment before the ceremony' },
+  { time: '3:00 PM', event: 'Guest Arrival', desc: 'Welcome drinks and seating' },
+  { time: '4:00 PM', event: 'Ceremony', desc: 'Exchanging of vows' },
+  { time: '5:30 PM', event: 'Cocktail Hour', desc: 'Drinks, hors d\'oeuvres, and photos' },
+  { time: '7:00 PM', event: 'Reception', desc: 'Dinner, toasts, and dancing' },
+];
+
 export default function Proposal() {
   const sectionRef = useRef<HTMLDivElement>(null);
   const bgRef = useRef<HTMLDivElement>(null);
@@ -17,16 +26,17 @@ export default function Proposal() {
         scrollTrigger: {
           trigger: sectionRef.current,
           start: 'top top',
-          end: '+=150%',
+          end: '+=200%',
           pin: true,
           scrub: 1,
         }
       });
 
       tl.to(bgRef.current, { filter: 'blur(10px)', scale: 1.1, duration: 1 })
-        .fromTo('.proposal-line', 
-          { opacity: 0, y: 30 },
-          { opacity: 1, y: 0, stagger: 0.3, duration: 1 },
+        .fromTo('.agenda-title', { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 0.5 }, "<0.2")
+        .fromTo('.agenda-item', 
+          { opacity: 0, x: -30 },
+          { opacity: 1, x: 0, stagger: 0.15, duration: 0.8 },
           "<0.2"
         );
     }, sectionRef);
@@ -39,23 +49,37 @@ export default function Proposal() {
       <div ref={bgRef} className="absolute inset-0 z-0">
         <Image
           src="https://picsum.photos/seed/proposal/1920/1080"
-          alt="The Proposal"
+          alt="The Venue"
           fill
-          className="object-cover opacity-60"
+          className="object-cover opacity-40"
           referrerPolicy="no-referrer"
         />
       </div>
 
-      <div ref={textRef} className="relative z-10 text-center text-white max-w-3xl px-6">
-        <p className="proposal-line text-2xl md:text-4xl font-serif mb-6 leading-relaxed">
-          &quot;I asked her to be mine forever...&quot;
-        </p>
-        <p className="proposal-line text-2xl md:text-4xl font-serif mb-6 leading-relaxed">
-          &quot;...under a sky full of stars.&quot;
-        </p>
-        <p className="proposal-line text-2xl md:text-4xl font-serif leading-relaxed">
-          &quot;And she said yes.&quot;
-        </p>
+      <div ref={textRef} className="relative z-10 text-white max-w-4xl w-full px-6 flex flex-col items-center">
+        <h2 className="agenda-title text-4xl md:text-6xl font-serif mb-12 text-center tracking-wide">
+          Wedding Agenda
+        </h2>
+        
+        <div className="w-full max-w-2xl relative">
+          {/* Vertical Line */}
+          <div className="absolute left-8 md:left-1/2 top-0 bottom-0 w-px bg-white/30 -translate-x-1/2" />
+          
+          <div className="space-y-8">
+            {agendaItems.map((item, i) => (
+              <div key={i} className={`agenda-item flex flex-col md:flex-row items-start md:items-center relative ${i % 2 === 0 ? 'md:flex-row-reverse' : ''}`}>
+                {/* Dot */}
+                <div className="absolute left-8 md:left-1/2 w-3 h-3 bg-[var(--color-champagne)] rounded-full -translate-x-1/2 mt-2 md:mt-0 shadow-[0_0_10px_rgba(247,231,206,0.5)]" />
+                
+                <div className={`w-full pl-16 md:pl-0 md:w-1/2 ${i % 2 === 0 ? 'md:pl-12 text-left' : 'md:pr-12 md:text-right'}`}>
+                  <p className="text-[var(--color-champagne)] font-mono text-sm tracking-widest mb-1">{item.time}</p>
+                  <h3 className="text-2xl font-serif mb-1">{item.event}</h3>
+                  <p className="text-white/70 text-sm">{item.desc}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
       </div>
     </section>
   );
