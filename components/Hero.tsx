@@ -91,8 +91,10 @@ function Hero() {
       </div>
 
       <div className="hero-text-container relative z-10 text-center text-white flex flex-col items-center px-6">
-        <h1 ref={titleRef} className="text-6xl md:text-8xl lg:text-9xl font-serif mb-4 tracking-tight drop-shadow-2xl">
-          {WEDDING_DATA.couple.combined}
+        <h1 ref={titleRef} className="flex flex-col md:flex-row items-center gap-2 md:gap-4 text-6xl md:text-8xl lg:text-9xl font-serif mb-4 tracking-tight drop-shadow-2xl">
+          <span>{WEDDING_DATA.couple.groom.firstName}</span>
+          <span className="md:inline">&</span>
+          <span className="md:text-right">{WEDDING_DATA.couple.bride.firstName}</span>
         </h1>
         <p ref={dateRef} className="text-xl md:text-2xl font-sans tracking-widest uppercase drop-shadow-md text-white/90">
           Are Getting Married <br/> {WEDDING_DATA.date.date}
