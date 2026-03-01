@@ -50,7 +50,7 @@ function OurStory() {
   }, []);
 
   return (
-    <section ref={sectionRef} className="py-24 md:py-32 bg-[var(--color-soft-butter)]">
+    <section ref={sectionRef} className="py-24 md:py-32 bg-[var(--color-soft-butter)] overflow-hidden">
       <div className="max-w-6xl mx-auto px-6">
         <h2 className="text-4xl md:text-6xl text-center mb-20 font-serif">Our Story</h2>
         
