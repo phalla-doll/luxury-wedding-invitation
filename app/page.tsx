@@ -1,5 +1,6 @@
 import SmoothScroll from '@/components/SmoothScroll';
 import Hero from '@/components/Hero';
+import Invitation from '@/components/Invitation';
 import OurStory from '@/components/OurStory';
 import Proposal from '@/components/Proposal';
 import EventDetails from '@/components/EventDetails';
@@ -12,6 +13,7 @@ export default function Home() {
     <SmoothScroll>
       <main className="relative w-full bg-[var(--color-soft-butter)]">
         <Hero />
+        <Invitation />
         <OurStory />
         <Proposal />
         <EventDetails />
