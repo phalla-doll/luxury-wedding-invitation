@@ -3,10 +3,12 @@ import { useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import SplitType from 'split-type';
+import Image from 'next/image';
 
 export default function Closing() {
   const sectionRef = useRef<HTMLDivElement>(null);
   const sigRef = useRef<HTMLDivElement>(null);
+  const flowerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const ctx = gsap.context(() => {
@@ -25,6 +27,19 @@ export default function Closing() {
           start: 'top 60%',
         }
       });
+
+      if (flowerRef.current) {
+        gsap.to(flowerRef.current, {
+          yPercent: 30,
+          ease: 'none',
+          scrollTrigger: {
+            trigger: sectionRef.current,
+            start: 'top bottom',
+            end: 'bottom top',
+            scrub: true,
+          }
+        });
+      }
 
       return () => splitSig.revert();
     }, sectionRef);
@@ -45,6 +60,17 @@ export default function Closing() {
       <p className="mt-16 text-sm tracking-widest uppercase text-gray-500">
         We look forward to sharing our special day with you.
       </p>
+
+      <div ref={flowerRef} className="absolute bottom-0 right-0 w-[45vw]">
+        <Image
+          src="/element/flower-green.png"
+          alt="Green flower decoration"
+          width={0}
+          height={0}
+          sizes="45vw"
+          className="w-full h-auto"
+        />
+      </div>
     </section>
   );
 }
