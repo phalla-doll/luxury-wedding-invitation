@@ -4,6 +4,7 @@ import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import SplitType from 'split-type';
 import Image from 'next/image';
+import { WEDDING_DATA } from '@/constants/wedding';
 
 function Hero() {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -78,8 +79,8 @@ function Hero() {
       <div className="absolute inset-0 z-0 overflow-hidden">
         <Image
           ref={imageRef}
-          src="/pexels-panditwiguna-2788494.jpg"
-          alt="Kakda and Savry"
+          src={WEDDING_DATA.images.hero}
+          alt={WEDDING_DATA.couple.combinedAnd}
           fill
           sizes="100vw"
           className="object-cover scale-110"
@@ -91,10 +92,10 @@ function Hero() {
 
       <div className="hero-text-container relative z-10 text-center text-white flex flex-col items-center px-6">
         <h1 ref={titleRef} className="text-6xl md:text-8xl lg:text-9xl font-serif mb-4 tracking-tight drop-shadow-2xl">
-          Kakda & Savry
+          {WEDDING_DATA.couple.combined}
         </h1>
         <p ref={dateRef} className="text-xl md:text-2xl font-sans tracking-widest uppercase drop-shadow-md text-white/90">
-          Are Getting Married <br/> June 21, 2026
+          Are Getting Married <br/> {WEDDING_DATA.date.date}
         </p>
       </div>
     </section>

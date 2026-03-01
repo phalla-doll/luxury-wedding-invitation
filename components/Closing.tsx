@@ -4,6 +4,7 @@ import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import SplitType from 'split-type';
 import Image from 'next/image';
+import { WEDDING_DATA } from '@/constants/wedding';
 
 export default function Closing() {
   const sectionRef = useRef<HTMLDivElement>(null);
@@ -52,9 +53,9 @@ export default function Closing() {
       <p className="text-xl md:text-3xl font-serif italic mb-12 max-w-2xl leading-relaxed text-gray-800">
         &quot;Whatever our souls are made of, his and mine are the same.&quot;
       </p>
-      
+
       <div ref={sigRef} className="text-5xl md:text-8xl text-[var(--color-golden-bronze)] font-[family-name:var(--font-cursive)]">
-        Kakda & Savry
+        {WEDDING_DATA.couple.combined}
       </div>
 
       <p className="mt-16 text-sm tracking-widest uppercase text-gray-500">

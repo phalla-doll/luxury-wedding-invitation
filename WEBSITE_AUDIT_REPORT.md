@@ -1,5 +1,5 @@
 # 🔍 Comprehensive Website Audit Report
-## Luxury Wedding Invitation - Kakda & Savry
+## Luxury Wedding Invitation - Jordan & Sophia
 
 **Date:** March 1, 2026  
 **Auditor:** opencode CLI  

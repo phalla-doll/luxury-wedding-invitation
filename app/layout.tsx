@@ -3,6 +3,7 @@ import { Inter, Playfair_Display, Great_Vibes } from 'next/font/google';
 import './globals.css';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { WEDDING_DATA } from '@/constants/wedding';
 
 if (typeof window !== 'undefined') {
   gsap.registerPlugin(ScrollTrigger);
@@ -28,8 +29,8 @@ const greatVibes = Great_Vibes({
 });
 
 export const metadata: Metadata = {
-  title: 'Kakda & Savry | Wedding Invitation',
-  description: 'Join us to celebrate the wedding of Kakda and Savry.',
+  title: WEDDING_DATA.seo.title,
+  description: WEDDING_DATA.seo.description,
 };
 
 export default function RootLayout({children}: {children: React.ReactNode}) {

@@ -3,14 +3,9 @@ import { useEffect, useRef, memo } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import Image from 'next/image';
+import { WEDDING_DATA } from '@/constants/wedding';
 
-const photos = [
-  '/pexels-jibarofoto-1560303.jpg',
-  '/pexels-jonathanborba-3292701.jpg',
-  '/pexels-emma-bauso-1183828-2253870.jpg',
-  '/pexels-jin-wedding-3859587-5729057.jpg',
-  '/pexels-pixabay-157757.jpg',
-];
+const photos = WEDDING_DATA.galleryPhotos;
 
 function PhotoGallery() {
   const sectionRef = useRef<HTMLDivElement>(null);

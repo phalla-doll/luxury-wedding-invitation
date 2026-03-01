@@ -3,12 +3,9 @@ import { useEffect, useRef, memo } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import Image from 'next/image';
+import { WEDDING_DATA } from '@/constants/wedding';
 
-const milestones = [
-  { date: 'May 2018', title: 'First Met', desc: 'A chance encounter at a local coffee shop.', img: '/pexels-pixabay-265722.jpg' },
-  { date: 'August 2019', title: 'First Trip', desc: 'Exploring mountains together.', img: '/pexels-minan1398-752785.jpg' },
-  { date: 'December 2023', title: 'The Proposal', desc: 'A magical evening under stars.', img: '/pexels-minan1398-962353.jpg' },
-];
+const milestones = WEDDING_DATA.story;
 
 function OurStory() {
   const sectionRef = useRef<HTMLDivElement>(null);

@@ -3,6 +3,7 @@ import { useEffect, useRef } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import Image from 'next/image';
+import { WEDDING_DATA } from '@/constants/wedding';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -40,12 +41,12 @@ export default function LocationMap() {
       <div className="max-w-6xl mx-auto px-6 relative z-10">
         <h2 className="text-4xl md:text-5xl text-center mb-4 font-serif">The Location</h2>
         <p className="text-center text-gray-500 mb-12 tracking-widest uppercase text-sm">
-          Park Avenue, Koh Pich City Hall, Phnom Penh, Cambodia
+          {WEDDING_DATA.venue.address}
         </p>
-        
+
         <div className="w-full h-[400px] md:h-[600px] rounded-3xl overflow-hidden shadow-xl border border-black/5 relative">
           <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d950.5317490644426!2d104.94066168546576!3d11.550501134758159!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x310957422319ef25%3A0x386728e61a9d4d5d!2sKoh%20Pich%20City%20Hall!5e0!3m2!1sen!2skh!4v1772349739015!5m2!1sen!2skh"
+            src={WEDDING_DATA.venue.mapsEmbedUrl}
             className="w-full h-full"
             style={{ border: 0 }}
             allowFullScreen

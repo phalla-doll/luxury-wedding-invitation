@@ -3,15 +3,9 @@ import { useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import Image from 'next/image';
+import { WEDDING_DATA } from '@/constants/wedding';
 
-const agendaItems = [
-  { time: '4:00 AM', event: 'Preparation', desc: 'Bride and Groom getting ready' },
-  { time: '1:00 PM', event: 'First Look', desc: 'A private moment before the ceremony' },
-  { time: '3:00 PM', event: 'Guest Arrival', desc: 'Welcome drinks and seating' },
-  { time: '4:00 PM', event: 'Ceremony', desc: 'Exchanging of vows' },
-  { time: '5:30 PM', event: 'Cocktail Hour', desc: 'Drinks, hors d\'oeuvres, and photos' },
-  { time: '7:00 PM', event: 'Reception', desc: 'Dinner, toasts, and dancing' },
-];
+const agendaItems = WEDDING_DATA.agenda;
 
 export default function Proposal() {
   const sectionRef = useRef<HTMLDivElement>(null);
@@ -46,7 +40,7 @@ export default function Proposal() {
     <section ref={sectionRef} className="relative w-full h-screen overflow-hidden flex items-center justify-center bg-black">
       <div ref={bgRef} className="absolute inset-0 z-0">
         <Image
-          src="/pexels-mastercowley-1128783.jpg"
+          src={WEDDING_DATA.images.proposal || '/pexels-mastercowley-1128783.jpg'}
           alt="The Venue"
           fill
           sizes="100vw"
@@ -59,11 +53,11 @@ export default function Proposal() {
         <h2 className="agenda-title text-4xl md:text-6xl font-serif mb-12 text-center tracking-wide">
           Wedding Agenda
         </h2>
-        
+
         <div className="w-full max-w-2xl relative">
           {/* Vertical Line */}
           <div className="absolute left-8 md:left-1/2 top-0 bottom-0 w-px bg-white/30 -translate-x-1/2" />
-          
+
           <div className="space-y-8">
             {agendaItems.map((item, i) => (
               <div key={i} className={`agenda-item flex flex-col md:flex-row items-start md:items-center relative ${i % 2 === 0 ? 'md:flex-row-reverse' : ''}`}>

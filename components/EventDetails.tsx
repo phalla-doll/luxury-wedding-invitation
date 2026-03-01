@@ -3,6 +3,7 @@ import { useEffect, useRef } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import Image from 'next/image';
+import { WEDDING_DATA } from '@/constants/wedding';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -58,8 +59,8 @@ export default function EventDetails() {
               <span className="font-mono text-sm tracking-widest uppercase text-gray-500">When</span>
             </div>
             <div className="w-full md:w-2/3">
-              <h3 className="text-3xl md:text-6xl font-serif mb-4">Saturday, June 21, 2026</h3>
-              <p className="text-lg md:text-2xl text-gray-600 font-light">Ceremony begins at 4:00 PM<br/>Reception to follow at 6:00 PM</p>
+              <h3 className="text-3xl md:text-6xl font-serif mb-4">{WEDDING_DATA.date.full}</h3>
+              <p className="text-lg md:text-2xl text-gray-600 font-light">Ceremony begins at {WEDDING_DATA.times.ceremony}<br/>Reception to follow at {WEDDING_DATA.times.reception}</p>
             </div>
           </div>
 
@@ -69,8 +70,8 @@ export default function EventDetails() {
               <span className="font-mono text-sm tracking-widest uppercase text-gray-500">Where</span>
             </div>
             <div className="w-full md:w-2/3">
-              <h3 className="text-3xl md:text-6xl font-serif mb-4">Park Avenue</h3>
-              <p className="text-lg md:text-2xl text-gray-600 font-light">Koh Pich City Hall<br/>Phnom Penh, Cambodia</p>
+              <h3 className="text-3xl md:text-6xl font-serif mb-4">{WEDDING_DATA.venue.name}</h3>
+              <p className="text-lg md:text-2xl text-gray-600 font-light">{WEDDING_DATA.venue.street}<br/>{WEDDING_DATA.venue.city}, {WEDDING_DATA.venue.country}</p>
             </div>
           </div>
 
@@ -80,8 +81,8 @@ export default function EventDetails() {
               <span className="font-mono text-sm tracking-widest uppercase text-gray-500">Attire</span>
             </div>
             <div className="w-full md:w-2/3">
-              <h3 className="text-3xl md:text-6xl font-serif mb-4">Black Tie Optional</h3>
-              <p className="text-lg md:text-2xl text-gray-600 font-light leading-relaxed">We ask that men wear a tuxedo or a dark suit and tie, and women wear an evening gown or midi-length cocktail dress.</p>
+              <h3 className="text-3xl md:text-6xl font-serif mb-4">{WEDDING_DATA.dressCode.type}</h3>
+              <p className="text-lg md:text-2xl text-gray-600 font-light leading-relaxed">{WEDDING_DATA.dressCode.description}</p>
             </div>
           </div>
         </div>
