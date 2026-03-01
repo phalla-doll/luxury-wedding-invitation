@@ -78,7 +78,7 @@ export default function Hero() {
       <div className="absolute inset-0 z-0 overflow-hidden">
         <Image
           ref={imageRef}
-          src="https://picsum.photos/seed/wedding1/1920/1080"
+          src="/pexels-panditwiguna-2788494.jpg"
           alt="John and Emma"
           fill
           className="object-cover scale-110"

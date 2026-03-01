@@ -48,7 +48,7 @@ export default function Proposal() {
     <section ref={sectionRef} className="relative w-full h-screen overflow-hidden flex items-center justify-center bg-black">
       <div ref={bgRef} className="absolute inset-0 z-0">
         <Image
-          src="https://picsum.photos/seed/proposal/1920/1080"
+          src="/pexels-mastercowley-1128783.jpg"
           alt="The Venue"
           fill
           className="object-cover opacity-40"

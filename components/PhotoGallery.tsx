@@ -7,11 +7,11 @@ import Image from 'next/image';
 gsap.registerPlugin(ScrollTrigger);
 
 const photos = [
-  'https://picsum.photos/seed/gallery1/800/1200',
-  'https://picsum.photos/seed/gallery2/800/1200',
-  'https://picsum.photos/seed/gallery3/800/1200',
-  'https://picsum.photos/seed/gallery4/800/1200',
-  'https://picsum.photos/seed/gallery5/800/1200',
+  '/pexels-jibarofoto-1560303.jpg',
+  '/pexels-jonathanborba-3292701.jpg',
+  '/pexels-emma-bauso-1183828-2253870.jpg',
+  '/pexels-jin-wedding-3859587-5729057.jpg',
+  '/pexels-pixabay-157757.jpg',
 ];
 
 export default function PhotoGallery() {

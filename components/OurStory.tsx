@@ -7,9 +7,9 @@ import Image from 'next/image';
 gsap.registerPlugin(ScrollTrigger);
 
 const milestones = [
-  { date: 'May 2018', title: 'First Met', desc: 'A chance encounter at a local coffee shop.', img: 'https://picsum.photos/seed/coffee/600/400' },
-  { date: 'August 2019', title: 'First Trip', desc: 'Exploring the mountains together.', img: 'https://picsum.photos/seed/mountains/600/400' },
-  { date: 'December 2023', title: 'The Proposal', desc: 'A magical evening under the stars.', img: 'https://picsum.photos/seed/stars/600/400' },
+  { date: 'May 2018', title: 'First Met', desc: 'A chance encounter at a local coffee shop.', img: '/pexels-pixabay-265722.jpg' },
+  { date: 'August 2019', title: 'First Trip', desc: 'Exploring the mountains together.', img: '/pexels-minan1398-752785.jpg' },
+  { date: 'December 2023', title: 'The Proposal', desc: 'A magical evening under the stars.', img: '/pexels-minan1398-962353.jpg' },
 ];
 
 export default function OurStory() {
