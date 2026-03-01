@@ -12,6 +12,7 @@ const milestones = [
 
 function OurStory() {
   const sectionRef = useRef<HTMLDivElement>(null);
+  const flowerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const ctx = gsap.context(() => {
@@ -44,6 +45,23 @@ function OurStory() {
           }
         );
       });
+
+      if (flowerRef.current) {
+        gsap.fromTo(flowerRef.current,
+          { y: 0, scale: 1 },
+          {
+            y: -150,
+            scale: 1.15,
+            ease: 'none',
+            scrollTrigger: {
+              trigger: sectionRef.current,
+              start: 'top bottom',
+              end: 'bottom top',
+              scrub: true,
+            }
+          }
+        );
+      }
     }, sectionRef);
 
     return () => ctx.revert();
@@ -55,12 +73,15 @@ function OurStory() {
         <h2 className="text-4xl md:text-6xl text-center mb-20 font-serif">Our Story</h2>
         
         <div className="relative">
-          {/* Timeline Line */}
+          <div ref={flowerRef} className="flower-bg absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[80vw] h-[80vw] max-h-[600px] max-w-[600px] md:max-h-[800px] md:max-w-[800px] lg:max-h-none lg:max-w-none opacity-10 z-0 pointer-events-none">
+            <Image src="/element/flower-purple-blue.png" alt="" fill sizes="80vw" className="object-contain" />
+          </div>
+
           <div className="absolute left-1/2 top-0 bottom-0 w-px bg-[var(--color-golden-bronze)] opacity-20 hidden md:block" />
 
           <div className="space-y-24">
             {milestones.map((m, i) => (
-              <div key={i} className={`story-item flex flex-col md:flex-row items-center gap-8 md:gap-16 ${i % 2 === 0 ? '' : 'md:flex-row-reverse'}`}>
+              <div key={m.title} className={`story-item flex flex-col md:flex-row items-center gap-8 md:gap-16 ${i % 2 === 0 ? '' : 'md:flex-row-reverse'}`}>
                 <div className="w-full md:w-1/2 flex justify-center">
                   <div className="story-img relative w-full max-w-md aspect-[4/3] rounded-2xl overflow-hidden shadow-xl">
                     <Image src={m.img} alt={m.title} fill sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw" className="object-cover" referrerPolicy="no-referrer" />
