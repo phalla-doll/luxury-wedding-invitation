@@ -42,6 +42,7 @@ export default function Hero() {
       // Parallax effect for text
       gsap.to('.hero-text-container', {
         y: '60%',
+        scale: 0.8,
         opacity: 0,
         ease: 'none',
         scrollTrigger: {
