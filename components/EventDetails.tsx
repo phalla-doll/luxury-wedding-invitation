@@ -2,7 +2,6 @@
 import { useEffect, useRef } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { FiClock, FiMapPin, FiCalendar, FiUser } from 'react-icons/fi';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -11,13 +10,13 @@ export default function EventDetails() {
 
   useEffect(() => {
     const ctx = gsap.context(() => {
-      gsap.fromTo('.event-card',
+      gsap.fromTo('.detail-row',
         { y: 50, opacity: 0 },
         {
-          y: 0, opacity: 1, stagger: 0.2, duration: 1, ease: 'power2.out',
+          y: 0, opacity: 1, stagger: 0.15, duration: 1, ease: 'power3.out',
           scrollTrigger: {
             trigger: sectionRef.current,
-            start: 'top 70%',
+            start: 'top 75%',
           }
         }
       );
@@ -27,33 +26,42 @@ export default function EventDetails() {
   }, []);
 
   return (
-    <section ref={sectionRef} className="py-24 md:py-32 bg-[var(--color-ivory)]">
-      <div className="max-w-6xl mx-auto px-6">
-        <h2 className="text-4xl md:text-6xl text-center mb-16 font-serif">The Details</h2>
+    <section ref={sectionRef} className="py-32 md:py-48 bg-[var(--color-ivory)] text-[var(--color-ink)]">
+      <div className="max-w-7xl mx-auto px-6 md:px-12">
+        <h2 className="text-5xl md:text-8xl font-serif mb-20 md:mb-32 tracking-tight">The Details</h2>
         
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-          <div className="event-card bg-white/50 backdrop-blur-sm p-8 rounded-2xl shadow-sm border border-black/5 hover:shadow-md transition-shadow duration-300 text-center flex flex-col items-center">
-            <FiCalendar className="text-4xl text-[var(--color-dusty-rose)] mb-4" />
-            <h3 className="text-xl font-serif mb-2">Date</h3>
-            <p className="text-gray-600">Saturday<br/>June 21, 2026</p>
-          </div>
-          
-          <div className="event-card bg-white/50 backdrop-blur-sm p-8 rounded-2xl shadow-sm border border-black/5 hover:shadow-md transition-shadow duration-300 text-center flex flex-col items-center">
-            <FiClock className="text-4xl text-[var(--color-dusty-rose)] mb-4" />
-            <h3 className="text-xl font-serif mb-2">Time</h3>
-            <p className="text-gray-600">Ceremony: 4:00 PM<br/>Reception: 6:00 PM</p>
-          </div>
-
-          <div className="event-card bg-white/50 backdrop-blur-sm p-8 rounded-2xl shadow-sm border border-black/5 hover:shadow-md transition-shadow duration-300 text-center flex flex-col items-center">
-            <FiMapPin className="text-4xl text-[var(--color-dusty-rose)] mb-4" />
-            <h3 className="text-xl font-serif mb-2">Venue</h3>
-            <p className="text-gray-600">The Grand Estate<br/>123 Wedding Lane, NY</p>
+        <div className="flex flex-col border-t border-black/20">
+          {/* Row 1: Date & Time */}
+          <div className="detail-row flex flex-col md:flex-row py-12 md:py-16 border-b border-black/20">
+            <div className="w-full md:w-1/3 mb-6 md:mb-0">
+              <span className="font-mono text-sm tracking-widest uppercase text-gray-500">When</span>
+            </div>
+            <div className="w-full md:w-2/3">
+              <h3 className="text-4xl md:text-6xl font-serif mb-4">Saturday, June 21, 2026</h3>
+              <p className="text-xl md:text-2xl text-gray-600 font-light">Ceremony begins at 4:00 PM<br/>Reception to follow at 6:00 PM</p>
+            </div>
           </div>
 
-          <div className="event-card bg-white/50 backdrop-blur-sm p-8 rounded-2xl shadow-sm border border-black/5 hover:shadow-md transition-shadow duration-300 text-center flex flex-col items-center">
-            <FiUser className="text-4xl text-[var(--color-dusty-rose)] mb-4" />
-            <h3 className="text-xl font-serif mb-2">Dress Code</h3>
-            <p className="text-gray-600">Black Tie Optional<br/>Elegant & Formal</p>
+          {/* Row 2: Venue */}
+          <div className="detail-row flex flex-col md:flex-row py-12 md:py-16 border-b border-black/20">
+            <div className="w-full md:w-1/3 mb-6 md:mb-0">
+              <span className="font-mono text-sm tracking-widest uppercase text-gray-500">Where</span>
+            </div>
+            <div className="w-full md:w-2/3">
+              <h3 className="text-4xl md:text-6xl font-serif mb-4">The Grand Estate</h3>
+              <p className="text-xl md:text-2xl text-gray-600 font-light">123 Wedding Lane<br/>New York, NY 10001</p>
+            </div>
+          </div>
+
+          {/* Row 3: Dress Code */}
+          <div className="detail-row flex flex-col md:flex-row py-12 md:py-16 border-b border-black/20">
+            <div className="w-full md:w-1/3 mb-6 md:mb-0">
+              <span className="font-mono text-sm tracking-widest uppercase text-gray-500">Attire</span>
+            </div>
+            <div className="w-full md:w-2/3">
+              <h3 className="text-4xl md:text-6xl font-serif mb-4">Black Tie Optional</h3>
+              <p className="text-xl md:text-2xl text-gray-600 font-light leading-relaxed">We ask that men wear a tuxedo or a dark suit and tie, and women wear an evening gown or midi-length cocktail dress.</p>
+            </div>
           </div>
         </div>
       </div>
