@@ -12,7 +12,7 @@ export default function LocationMap() {
           The Grand Estate, 123 Wedding Lane, NY
         </p>
         
-        <div className="w-full h-[500px] md:h-[600px] rounded-3xl overflow-hidden shadow-xl border border-black/5 relative">
+        <div className="w-full h-[400px] md:h-[600px] rounded-3xl overflow-hidden shadow-xl border border-black/5 relative">
           <Map
             initialViewState={{
               longitude: -74.006,

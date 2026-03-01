@@ -26,9 +26,9 @@ export default function EventDetails() {
   }, []);
 
   return (
-    <section ref={sectionRef} className="py-32 md:py-48 bg-[var(--color-soft-butter)] text-[var(--color-ink)]">
+    <section ref={sectionRef} className="py-24 md:py-48 bg-[var(--color-soft-butter)] text-[var(--color-ink)]">
       <div className="max-w-7xl mx-auto px-6 md:px-12">
-        <h2 className="text-5xl md:text-8xl font-serif mb-20 md:mb-32 tracking-tight">The Details</h2>
+        <h2 className="text-4xl md:text-8xl font-serif mb-16 md:mb-32 tracking-tight">The Details</h2>
         
         <div className="flex flex-col border-t border-black/20">
           {/* Row 1: Date & Time */}
@@ -37,8 +37,8 @@ export default function EventDetails() {
               <span className="font-mono text-sm tracking-widest uppercase text-gray-500">When</span>
             </div>
             <div className="w-full md:w-2/3">
-              <h3 className="text-4xl md:text-6xl font-serif mb-4">Saturday, June 21, 2026</h3>
-              <p className="text-xl md:text-2xl text-gray-600 font-light">Ceremony begins at 4:00 PM<br/>Reception to follow at 6:00 PM</p>
+              <h3 className="text-3xl md:text-6xl font-serif mb-4">Saturday, June 21, 2026</h3>
+              <p className="text-lg md:text-2xl text-gray-600 font-light">Ceremony begins at 4:00 PM<br/>Reception to follow at 6:00 PM</p>
             </div>
           </div>
 
@@ -48,8 +48,8 @@ export default function EventDetails() {
               <span className="font-mono text-sm tracking-widest uppercase text-gray-500">Where</span>
             </div>
             <div className="w-full md:w-2/3">
-              <h3 className="text-4xl md:text-6xl font-serif mb-4">The Grand Estate</h3>
-              <p className="text-xl md:text-2xl text-gray-600 font-light">123 Wedding Lane<br/>New York, NY 10001</p>
+              <h3 className="text-3xl md:text-6xl font-serif mb-4">The Grand Estate</h3>
+              <p className="text-lg md:text-2xl text-gray-600 font-light">123 Wedding Lane<br/>New York, NY 10001</p>
             </div>
           </div>
 
@@ -59,8 +59,8 @@ export default function EventDetails() {
               <span className="font-mono text-sm tracking-widest uppercase text-gray-500">Attire</span>
             </div>
             <div className="w-full md:w-2/3">
-              <h3 className="text-4xl md:text-6xl font-serif mb-4">Black Tie Optional</h3>
-              <p className="text-xl md:text-2xl text-gray-600 font-light leading-relaxed">We ask that men wear a tuxedo or a dark suit and tie, and women wear an evening gown or midi-length cocktail dress.</p>
+              <h3 className="text-3xl md:text-6xl font-serif mb-4">Black Tie Optional</h3>
+              <p className="text-lg md:text-2xl text-gray-600 font-light leading-relaxed">We ask that men wear a tuxedo or a dark suit and tie, and women wear an evening gown or midi-length cocktail dress.</p>
             </div>
           </div>
         </div>

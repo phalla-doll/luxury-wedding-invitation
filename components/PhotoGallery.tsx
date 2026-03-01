@@ -23,18 +23,20 @@ export default function PhotoGallery() {
       const container = scrollContainerRef.current;
       if (!container) return;
 
-      const totalWidth = container.scrollWidth - window.innerWidth;
+      const totalWidth = Math.max(0, container.scrollWidth - window.innerWidth);
 
-      gsap.to(container, {
-        x: -totalWidth,
-        ease: 'none',
-        scrollTrigger: {
-          trigger: sectionRef.current,
-          pin: true,
-          scrub: 1,
-          end: () => `+=${totalWidth}`,
-        }
-      });
+      if (totalWidth > 0) {
+        gsap.to(container, {
+          x: -totalWidth,
+          ease: 'none',
+          scrollTrigger: {
+            trigger: sectionRef.current,
+            pin: true,
+            scrub: 1,
+            end: () => `+=${totalWidth}`,
+          }
+        });
+      }
     }, sectionRef);
 
     return () => ctx.revert();
@@ -43,7 +45,7 @@ export default function PhotoGallery() {
   return (
     <section ref={sectionRef} className="relative h-screen bg-[var(--color-soft-butter)] overflow-hidden flex flex-col justify-center">
       <h2 className="text-4xl md:text-6xl text-center mb-12 font-serif absolute top-16 w-full z-10">Moments</h2>
-      <div ref={scrollContainerRef} className="flex gap-8 px-8 md:px-24 h-[60vh] items-center w-max mt-16">
+      <div ref={scrollContainerRef} className="flex gap-4 md:gap-8 px-4 md:px-24 h-[50vh] md:h-[60vh] items-center w-max mt-16">
         {photos.map((src, i) => (
           <div key={i} className="relative h-full aspect-[2/3] rounded-xl overflow-hidden shadow-2xl group">
             <Image
