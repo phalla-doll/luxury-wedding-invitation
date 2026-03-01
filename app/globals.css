@@ -1,10 +1,8 @@
 @import "tailwindcss";
 
 @theme {
-  --color-champagne: #F7E7CE;
-  --color-ivory: #FAFAFA;
-  --color-dusty-rose: #DCAE96;
-  --color-deep-green: #2C5F2D;
+  --color-soft-butter: #f5edd7;
+  --color-golden-bronze: #aa7733;
   --color-ink: #1A1A1A;
   --font-serif: var(--font-playfair);
   --font-sans: var(--font-inter);
@@ -12,7 +10,7 @@
 }
 
 body {
-  background-color: var(--color-ivory);
+  background-color: var(--color-soft-butter);
   color: var(--color-ink);
   font-family: var(--font-sans);
   overflow-x: hidden;

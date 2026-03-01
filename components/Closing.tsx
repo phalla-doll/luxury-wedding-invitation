@@ -35,12 +35,12 @@ export default function Closing() {
   }, []);
 
   return (
-    <section ref={sectionRef} className="h-screen flex flex-col items-center justify-center bg-[var(--color-champagne)] text-center px-6">
+    <section ref={sectionRef} className="h-screen flex flex-col items-center justify-center bg-[var(--color-soft-butter)] text-center px-6">
       <p className="text-2xl md:text-3xl font-serif italic mb-12 max-w-2xl leading-relaxed text-gray-800">
         &quot;Whatever our souls are made of, his and mine are the same.&quot;
       </p>
       
-      <div ref={sigRef} className="text-6xl md:text-8xl text-[var(--color-deep-green)] font-[family-name:var(--font-cursive)]">
+      <div ref={sigRef} className="text-6xl md:text-8xl text-[var(--color-golden-bronze)] font-[family-name:var(--font-cursive)]">
         John & Emma
       </div>
 

@@ -26,7 +26,7 @@ export default function EventDetails() {
   }, []);
 
   return (
-    <section ref={sectionRef} className="py-32 md:py-48 bg-[var(--color-ivory)] text-[var(--color-ink)]">
+    <section ref={sectionRef} className="py-32 md:py-48 bg-[var(--color-soft-butter)] text-[var(--color-ink)]">
       <div className="max-w-7xl mx-auto px-6 md:px-12">
         <h2 className="text-5xl md:text-8xl font-serif mb-20 md:mb-32 tracking-tight">The Details</h2>
         

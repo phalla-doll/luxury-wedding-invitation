@@ -41,7 +41,7 @@ export default function PhotoGallery() {
   }, []);
 
   return (
-    <section ref={sectionRef} className="relative h-screen bg-[var(--color-champagne)] overflow-hidden flex flex-col justify-center">
+    <section ref={sectionRef} className="relative h-screen bg-[var(--color-soft-butter)] overflow-hidden flex flex-col justify-center">
       <h2 className="text-4xl md:text-6xl text-center mb-12 font-serif absolute top-16 w-full z-10">Moments</h2>
       <div ref={scrollContainerRef} className="flex gap-8 px-8 md:px-24 h-[60vh] items-center w-max mt-16">
         {photos.map((src, i) => (

@@ -10,7 +10,7 @@ import Closing from '@/components/Closing';
 export default function Home() {
   return (
     <SmoothScroll>
-      <main className="relative w-full bg-[var(--color-ivory)]">
+      <main className="relative w-full bg-[var(--color-soft-butter)]">
         <Hero />
         <OurStory />
         <Proposal />

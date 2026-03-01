@@ -35,8 +35,8 @@ export default function Proposal() {
       tl.to(bgRef.current, { filter: 'blur(10px)', scale: 1.1, duration: 1 })
         .fromTo('.agenda-title', { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 0.5 }, "<0.2")
         .fromTo('.agenda-item', 
-          { opacity: 0, x: -30 },
-          { opacity: 1, x: 0, stagger: 0.15, duration: 0.8 },
+          { opacity: 0, y: 50, x: (i) => i % 2 === 0 ? 50 : -50 },
+          { opacity: 1, y: 0, x: 0, stagger: 0.2, duration: 1, ease: 'power3.out' },
           "<0.2"
         );
     }, sectionRef);
@@ -69,10 +69,10 @@ export default function Proposal() {
             {agendaItems.map((item, i) => (
               <div key={i} className={`agenda-item flex flex-col md:flex-row items-start md:items-center relative ${i % 2 === 0 ? 'md:flex-row-reverse' : ''}`}>
                 {/* Dot */}
-                <div className="absolute left-8 md:left-1/2 w-3 h-3 bg-[var(--color-champagne)] rounded-full -translate-x-1/2 mt-2 md:mt-0 shadow-[0_0_10px_rgba(247,231,206,0.5)]" />
+                <div className="absolute left-8 md:left-1/2 w-3 h-3 bg-[var(--color-golden-bronze)] rounded-full -translate-x-1/2 mt-2 md:mt-0 shadow-[0_0_10px_rgba(170,119,51,0.5)]" />
                 
                 <div className={`w-full pl-16 md:pl-0 md:w-1/2 ${i % 2 === 0 ? 'md:pl-12 text-left' : 'md:pr-12 md:text-right'}`}>
-                  <p className="text-[var(--color-champagne)] font-mono text-sm tracking-widest mb-1">{item.time}</p>
+                  <p className="text-[var(--color-golden-bronze)] font-mono text-sm tracking-widest mb-1">{item.time}</p>
                   <h3 className="text-2xl font-serif mb-1">{item.event}</h3>
                   <p className="text-white/70 text-sm">{item.desc}</p>
                 </div>

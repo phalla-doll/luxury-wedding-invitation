@@ -52,13 +52,13 @@ export default function OurStory() {
   }, []);
 
   return (
-    <section ref={sectionRef} className="py-24 md:py-32 bg-[var(--color-champagne)]">
+    <section ref={sectionRef} className="py-24 md:py-32 bg-[var(--color-soft-butter)]">
       <div className="max-w-6xl mx-auto px-6">
         <h2 className="text-4xl md:text-6xl text-center mb-20 font-serif">Our Story</h2>
         
         <div className="relative">
           {/* Timeline Line */}
-          <div className="absolute left-1/2 top-0 bottom-0 w-px bg-[var(--color-deep-green)] opacity-20 hidden md:block" />
+          <div className="absolute left-1/2 top-0 bottom-0 w-px bg-[var(--color-golden-bronze)] opacity-20 hidden md:block" />
 
           <div className="space-y-24">
             {milestones.map((m, i) => (
@@ -69,7 +69,7 @@ export default function OurStory() {
                   </div>
                 </div>
                 <div className="story-text w-full md:w-1/2 text-center md:text-left">
-                  <p className="text-[var(--color-deep-green)] font-semibold tracking-widest uppercase mb-2">{m.date}</p>
+                  <p className="text-[var(--color-golden-bronze)] font-semibold tracking-widest uppercase mb-2">{m.date}</p>
                   <h3 className="text-3xl font-serif mb-4">{m.title}</h3>
                   <p className="text-lg text-gray-700">{m.desc}</p>
                 </div>
