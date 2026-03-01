@@ -2,7 +2,7 @@
 
 A beautiful, animated wedding invitation website with elegant design and smooth scroll animations. Built for John & Emma's wedding on June 21, 2026.
 
-![Wedding Invitation](https://github.com/user-attachments/assets/0aa67016-6eaf-458a-adb2-6e31a0763ed6)
+![Wedding Invitation](https://github.com/phalla-doll/luxury-wedding-invitation/blob/main/public/SCR-20260301-nezf.jpeg)
 
 ## Features
 
