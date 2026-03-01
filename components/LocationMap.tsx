@@ -9,7 +9,7 @@ export default function LocationMap() {
       <div className="max-w-6xl mx-auto px-6">
         <h2 className="text-4xl md:text-5xl text-center mb-4 font-serif">The Location</h2>
         <p className="text-center text-gray-500 mb-12 tracking-widest uppercase text-sm">
-          Koh Pich City Hall, Phnom Penh, Cambodia
+          Park Avenue, Koh Pich City Hall, Phnom Penh, Cambodia
         </p>
         
         <div className="w-full h-[400px] md:h-[600px] rounded-3xl overflow-hidden shadow-xl border border-black/5 relative">
