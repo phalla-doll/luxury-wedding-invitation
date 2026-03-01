@@ -15,6 +15,7 @@ const photos = [
 function PhotoGallery() {
   const sectionRef = useRef<HTMLDivElement>(null);
   const scrollContainerRef = useRef<HTMLDivElement>(null);
+  const flowerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const ctx = gsap.context(() => {
@@ -36,9 +37,28 @@ function PhotoGallery() {
             }
           });
         }
-      });
 
-      return () => cancelAnimationFrame(rafId);
+        if (flowerRef.current) {
+          gsap.fromTo(flowerRef.current,
+            { x: 0, y: 0, scale: 1, rotation: 0 },
+            {
+              x: -100,
+              y: -80,
+              scale: 1.1,
+              rotation: 5,
+              ease: 'none',
+              scrollTrigger: {
+                trigger: sectionRef.current,
+                start: 'top bottom',
+                end: 'bottom top',
+                scrub: true,
+              }
+            }
+          );
+        }
+
+        return () => cancelAnimationFrame(rafId);
+      });
     }, sectionRef);
 
     return () => ctx.revert();
@@ -47,6 +67,9 @@ function PhotoGallery() {
   return (
     <section ref={sectionRef} className="relative h-screen bg-[var(--color-soft-butter)] overflow-hidden flex flex-col justify-center">
       <h2 className="text-4xl md:text-6xl text-center mb-12 font-serif absolute top-16 w-full z-10">Moments</h2>
+      <div ref={flowerRef} className="flower-bg absolute top-4 right-4 w-[60vw] h-[60vw] max-h-[250px] max-w-[250px] md:top-8 md:right-8 md:w-[50vw] md:h-[50vw] md:max-h-[400px] md:max-w-[400px] lg:top-12 lg:right-12 lg:w-[45vw] lg:h-[45vw] lg:max-h-[600px] lg:max-w-[600px] opacity-15 z-0 pointer-events-none">
+        <Image src="/element/flower-blue.png" alt="" fill sizes="40vw" className="object-contain" />
+      </div>
       <div ref={scrollContainerRef} className="flex gap-4 md:gap-8 px-4 md:px-24 h-[50vh] md:h-[60vh] items-center w-max mt-16">
         {photos.map((src, i) => (
           <div key={i} className="relative h-full aspect-[2/3] rounded-xl overflow-hidden shadow-2xl group">
