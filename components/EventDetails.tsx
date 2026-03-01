@@ -48,8 +48,8 @@ export default function EventDetails() {
               <span className="font-mono text-sm tracking-widest uppercase text-gray-500">Where</span>
             </div>
             <div className="w-full md:w-2/3">
-              <h3 className="text-3xl md:text-6xl font-serif mb-4">The Grand Estate</h3>
-              <p className="text-lg md:text-2xl text-gray-600 font-light">123 Wedding Lane<br/>New York, NY 10001</p>
+              <h3 className="text-3xl md:text-6xl font-serif mb-4">Park Avenue</h3>
+              <p className="text-lg md:text-2xl text-gray-600 font-light">Koh Pich City Hall<br/>Phnom Penh, Cambodia</p>
             </div>
           </div>
 
