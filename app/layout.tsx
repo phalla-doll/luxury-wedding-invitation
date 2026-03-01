@@ -1,13 +1,7 @@
 import type {Metadata} from 'next';
 import { Inter, Playfair_Display, Great_Vibes } from 'next/font/google';
 import './globals.css';
-import { gsap } from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { WEDDING_DATA } from '@/constants/wedding';
-
-if (typeof window !== 'undefined') {
-  gsap.registerPlugin(ScrollTrigger);
-}
 
 const inter = Inter({
   subsets: ['latin'],

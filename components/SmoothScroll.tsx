@@ -19,13 +19,16 @@ export default function SmoothScroll({ children }: { children: React.ReactNode }
       touchMultiplier: 2,
     });
 
+    let rafId: number;
     function raf(time: number) {
       lenis.raf(time);
-      requestAnimationFrame(raf);
+      rafId = requestAnimationFrame(raf);
     }
 
-    requestAnimationFrame(raf);
+    rafId = requestAnimationFrame(raf);
 
+    const refreshHandler = () => lenis.scrollTo(lenis.scroll || 0, { immediate: true });
+    
     ScrollTrigger.scrollerProxy(window, {
       scrollTop(value?: number) {
         if (arguments.length) {
@@ -40,11 +43,15 @@ export default function SmoothScroll({ children }: { children: React.ReactNode }
       pinType: document.body.style.transform ? 'transform' : 'fixed',
     });
 
-    ScrollTrigger.addEventListener('refresh', () => lenis.scrollTo(lenis.scroll || 0, { immediate: true }));
+    ScrollTrigger.addEventListener('refresh', refreshHandler);
     ScrollTrigger.refresh();
 
     return () => {
-      ScrollTrigger.removeEventListener('refresh', () => lenis.scrollTo(lenis.scroll, { immediate: true }));
+      if (rafId) {
+        cancelAnimationFrame(rafId);
+      }
+      ScrollTrigger.removeEventListener('refresh', refreshHandler);
+      ScrollTrigger.scrollerProxy(window);
       lenis.destroy();
       ScrollTrigger.clearScrollMemory();
     };

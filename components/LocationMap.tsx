@@ -5,8 +5,6 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import Image from 'next/image';
 import { WEDDING_DATA } from '@/constants/wedding';
 
-gsap.registerPlugin(ScrollTrigger);
-
 export default function LocationMap() {
   const sectionRef = useRef<HTMLDivElement>(null);
   const flowerRef = useRef<HTMLDivElement>(null);
