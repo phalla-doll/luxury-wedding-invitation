@@ -1,7 +1,4 @@
 'use client';
-import Map, { Marker, NavigationControl } from 'react-map-gl/maplibre';
-import 'maplibre-gl/dist/maplibre-gl.css';
-import { FiMapPin } from 'react-icons/fi';
 
 export default function LocationMap() {
   return (
@@ -20,6 +17,7 @@ export default function LocationMap() {
             allowFullScreen
             loading="lazy"
             referrerPolicy="no-referrer-when-downgrade"
+            title="Wedding venue location map"
           ></iframe>
         </div>
 

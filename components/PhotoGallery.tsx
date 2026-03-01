@@ -1,10 +1,8 @@
 'use client';
-import { useEffect, useRef } from 'react';
-import gsap from 'gsap';
+import { useEffect, useRef, memo } from 'react';
+import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import Image from 'next/image';
-
-gsap.registerPlugin(ScrollTrigger);
 
 const photos = [
   '/pexels-jibarofoto-1560303.jpg',
@@ -14,7 +12,7 @@ const photos = [
   '/pexels-pixabay-157757.jpg',
 ];
 
-export default function PhotoGallery() {
+function PhotoGallery() {
   const sectionRef = useRef<HTMLDivElement>(null);
   const scrollContainerRef = useRef<HTMLDivElement>(null);
 
@@ -23,20 +21,24 @@ export default function PhotoGallery() {
       const container = scrollContainerRef.current;
       if (!container) return;
 
-      const totalWidth = Math.max(0, container.scrollWidth - window.innerWidth);
+      const rafId = requestAnimationFrame(() => {
+        const totalWidth = Math.max(0, container.scrollWidth - window.innerWidth);
 
-      if (totalWidth > 0) {
-        gsap.to(container, {
-          x: -totalWidth,
-          ease: 'none',
-          scrollTrigger: {
-            trigger: sectionRef.current,
-            pin: true,
-            scrub: 1,
-            end: () => `+=${totalWidth}`,
-          }
-        });
-      }
+        if (totalWidth > 0) {
+          gsap.to(container, {
+            x: -totalWidth,
+            ease: 'none',
+            scrollTrigger: {
+              trigger: sectionRef.current,
+              pin: true,
+              scrub: 1,
+              end: () => `+=${totalWidth}`,
+            }
+          });
+        }
+      });
+
+      return () => cancelAnimationFrame(rafId);
     }, sectionRef);
 
     return () => ctx.revert();
@@ -52,6 +54,7 @@ export default function PhotoGallery() {
               src={src}
               alt={`Gallery image ${i + 1}`}
               fill
+              sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
               className="object-cover transition-transform duration-700 group-hover:scale-105 filter grayscale group-hover:grayscale-0"
               referrerPolicy="no-referrer"
             />
@@ -61,3 +64,5 @@ export default function PhotoGallery() {
     </section>
   );
 }
+
+export default memo(PhotoGallery);

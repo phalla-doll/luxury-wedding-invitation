@@ -1,13 +1,11 @@
 'use client';
-import { useEffect, useRef } from 'react';
-import gsap from 'gsap';
+import { useEffect, useRef, memo } from 'react';
+import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import SplitType from 'split-type';
 import Image from 'next/image';
 
-gsap.registerPlugin(ScrollTrigger);
-
-export default function Hero() {
+function Hero() {
   const containerRef = useRef<HTMLDivElement>(null);
   const titleRef = useRef<HTMLHeadingElement>(null);
   const dateRef = useRef<HTMLParagraphElement>(null);
@@ -70,7 +68,9 @@ export default function Hero() {
       };
     }, containerRef);
 
-    return () => ctx.revert();
+    return () => {
+      if (ctx) ctx.revert();
+    };
   }, []);
 
   return (
@@ -81,6 +81,7 @@ export default function Hero() {
           src="/pexels-panditwiguna-2788494.jpg"
           alt="John and Emma"
           fill
+          sizes="100vw"
           className="object-cover scale-110"
           priority
           referrerPolicy="no-referrer"
@@ -99,3 +100,5 @@ export default function Hero() {
     </section>
   );
 }
+
+export default memo(Hero);

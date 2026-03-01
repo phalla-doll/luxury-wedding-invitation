@@ -1,10 +1,8 @@
 'use client';
 import { useEffect, useRef } from 'react';
-import gsap from 'gsap';
+import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import SplitType from 'split-type';
-
-gsap.registerPlugin(ScrollTrigger);
 
 export default function Closing() {
   const sectionRef = useRef<HTMLDivElement>(null);

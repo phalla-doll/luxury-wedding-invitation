@@ -1,15 +1,17 @@
 'use client';
 import { useSearchParams } from 'next/navigation';
-import { useEffect, useRef, Suspense } from 'react';
-import gsap from 'gsap';
+import { useEffect, useRef, Suspense, useCallback, useState } from 'react';
+import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-
-gsap.registerPlugin(ScrollTrigger);
 
 function InvitationContent() {
   const searchParams = useSearchParams();
-  const guestName = searchParams.get('guest');
+  const [guestName, setGuestName] = useState<string | null>(null);
   const sectionRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    setGuestName(searchParams.get('guest'));
+  }, [searchParams]);
 
   useEffect(() => {
     const ctx = gsap.context(() => {
