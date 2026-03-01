@@ -82,6 +82,8 @@ export const WEDDING_DATA: WeddingData = {
     '/pexels-emma-bauso-1183828-2253870.jpg',
     '/pexels-jin-wedding-3859587-5729057.jpg',
     '/pexels-pixabay-157757.jpg',
+    '/pexels-l-u-d-c-anh-547928-1295941.jpg',
+    '/pexels-vika-glitter-392079-1651411.jpg',
   ],
 
   images: {
