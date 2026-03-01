@@ -1,10 +1,8 @@
 'use client';
 import { useEffect, useRef } from 'react';
-import gsap from 'gsap';
+import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import Image from 'next/image';
-
-gsap.registerPlugin(ScrollTrigger);
 
 const agendaItems = [
   { time: '4:00 AM', event: 'Preparation', desc: 'Bride and Groom getting ready' },
@@ -51,6 +49,7 @@ export default function Proposal() {
           src="/pexels-mastercowley-1128783.jpg"
           alt="The Venue"
           fill
+          sizes="100vw"
           className="object-cover opacity-40"
           referrerPolicy="no-referrer"
         />

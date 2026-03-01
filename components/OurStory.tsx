@@ -1,18 +1,16 @@
 'use client';
-import { useEffect, useRef } from 'react';
-import gsap from 'gsap';
+import { useEffect, useRef, memo } from 'react';
+import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import Image from 'next/image';
 
-gsap.registerPlugin(ScrollTrigger);
-
 const milestones = [
   { date: 'May 2018', title: 'First Met', desc: 'A chance encounter at a local coffee shop.', img: '/pexels-pixabay-265722.jpg' },
-  { date: 'August 2019', title: 'First Trip', desc: 'Exploring the mountains together.', img: '/pexels-minan1398-752785.jpg' },
-  { date: 'December 2023', title: 'The Proposal', desc: 'A magical evening under the stars.', img: '/pexels-minan1398-962353.jpg' },
+  { date: 'August 2019', title: 'First Trip', desc: 'Exploring mountains together.', img: '/pexels-minan1398-752785.jpg' },
+  { date: 'December 2023', title: 'The Proposal', desc: 'A magical evening under stars.', img: '/pexels-minan1398-962353.jpg' },
 ];
 
-export default function OurStory() {
+function OurStory() {
   const sectionRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -65,7 +63,7 @@ export default function OurStory() {
               <div key={i} className={`story-item flex flex-col md:flex-row items-center gap-8 md:gap-16 ${i % 2 === 0 ? '' : 'md:flex-row-reverse'}`}>
                 <div className="w-full md:w-1/2 flex justify-center">
                   <div className="story-img relative w-full max-w-md aspect-[4/3] rounded-2xl overflow-hidden shadow-xl">
-                    <Image src={m.img} alt={m.title} fill className="object-cover" referrerPolicy="no-referrer" />
+                    <Image src={m.img} alt={m.title} fill sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw" className="object-cover" referrerPolicy="no-referrer" />
                   </div>
                 </div>
                 <div className="story-text w-full md:w-1/2 text-center md:text-left">
@@ -81,3 +79,5 @@ export default function OurStory() {
     </section>
   );
 }
+
+export default memo(OurStory);
